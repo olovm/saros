@@ -9,8 +9,10 @@ repositories {
 }
 
 dependencies {
-    compile("com.diffplug.gradle:goomph:3.24.0")
-    compile("org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.6.3")
+//    compile("com.diffplug.gradle:goomph:3.24.0")
+//    compile("org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.6.3")
+    implementation("com.diffplug.gradle:goomph:3.24.0")
+    implementation("org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.6.3")
 }
 
 gradlePlugin {
