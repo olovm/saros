@@ -14,14 +14,17 @@ configurations {
     val releaseDep by getting {}
 
     // Default configuration
-    val compile by getting {
+//    val compile by getting {
+    val implementation by getting {
         extendsFrom(releaseDep)
     }
-    val testCompile by getting {
+//    val testCompile by getting {
+    val testImplementation by getting {
         extendsFrom(testConfig)
     }
     val plain by creating {
-        extendsFrom(compile)
+//    	extendsFrom(compile)
+        extendsFrom(implementation)
     }
 }
 

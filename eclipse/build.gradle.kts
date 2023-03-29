@@ -69,8 +69,9 @@ tasks {
     }
 
     val testJar by registering(Jar::class) {
-        classifier = "tests"
-        from(sourceSets["test"].output)
+//        classifier = "tests"
+        archiveClassifier.set("tests")
+		from(sourceSets["test"].output)
     }
 
     artifacts {
