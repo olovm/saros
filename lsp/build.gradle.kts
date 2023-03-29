@@ -12,11 +12,16 @@ configurations {
 }
 
 dependencies {
-    compile(project(":saros.core"))
-    compile(project(":saros.server"))
-    compile("org.apache.commons:commons-collections4:4.2")
-    compile("org.eclipse.lsp4j:org.eclipse.lsp4j:0.8.1")
-    compile("org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.8.1")
+ //   compile(project(":saros.core"))
+ //   compile(project(":saros.server"))
+//    compile("org.apache.commons:commons-collections4:4.2")
+//    compile("org.eclipse.lsp4j:org.eclipse.lsp4j:0.8.1")
+//    compile("org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.8.1")
+    implementation(project(":saros.core"))
+    implementation(project(":saros.server"))
+    implementation("org.apache.commons:commons-collections4:4.2")
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j:0.8.1")
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.8.1")
 }
 
 sourceSets {

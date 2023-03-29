@@ -8,8 +8,10 @@ configurations {
 }
 
 dependencies {
-    compile(project(":saros.core"))
-    compile("org.apache.commons:commons-collections4:4.2")
+//    compile(project(":saros.core"))
+//    compile("org.apache.commons:commons-collections4:4.2")
+    implementation(project(":saros.core"))
+    implementation("org.apache.commons:commons-collections4:4.2")
 }
 
 sourceSets {

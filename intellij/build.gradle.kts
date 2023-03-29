@@ -14,9 +14,11 @@ configurations {
 }
 
 dependencies {
-    compile(project(path = ":saros.core", configuration = "plain"))
+//    compile(project(path = ":saros.core", configuration = "plain"))
+    implementation(project(path = ":saros.core", configuration = "plain"))
 
-    testCompile(project(path = ":saros.core", configuration = "testing"))
+//    testCompile(project(path = ":saros.core", configuration = "testing"))
+    testCompileOnly(project(path = ":saros.core", configuration = "testing"))
 }
 
 sourceSets {
@@ -45,7 +47,7 @@ tasks {
                     "Manifest-Version" to "1.0"
             ))
         }
-        version = ""
+//        version = ""
 
         from(sourceSets["main"].output)
 
