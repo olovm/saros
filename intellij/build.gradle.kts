@@ -8,7 +8,7 @@ val intellijSandboxDir: String? = ext.get("intellijSandboxDir") as String?
 
 configurations {
     val testConfig by getting {}
-    val testCompile by getting {
+    val testImplementation by getting {
         extendsFrom(testConfig)
     }
 }

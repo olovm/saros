@@ -17,7 +17,7 @@ sarosEclipse {
 
 configurations {
     val releaseDep by getting {}
-    val compile by getting {
+    val implementation by getting {
         extendsFrom(releaseDep)
     }
 }

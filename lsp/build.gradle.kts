@@ -6,7 +6,7 @@ val versionQualifier = ext.get("versionQualifier")
 
 configurations {
     val testConfig by getting {}
-    val testCompile by getting {
+    val testImplementation by getting {
         extendsFrom(testConfig)
     }
 }
@@ -42,7 +42,7 @@ tasks.jar {
         ))
     }
     from(
-            configurations.compile.get().map { if (it.isDirectory) it else zipTree(it) }
+            configurations.compileClasspath.get().map { if (it.isDirectory) it else zipTree(it) }
     )
 
     from("src/log4j.properties")
