@@ -132,8 +132,9 @@ subprojects {
     /*
      * Make common dependency definitions accessible by all sub-projects
      */
-    val junitVersion = "junit:junit:4.12"
-    val log4j2VersionNr = "2.18.0"
+    val junitVersion = "junit:junit:4.13.2"
+//    val junitVersion = "org.junit.jupiter:junit-jupiter:5.9.2"
+    val log4j2VersionNr = "2.20.0"
     val log4j2Api = "org.apache.logging.log4j:log4j-api:$log4j2VersionNr"
     val log4j2Core = "org.apache.logging.log4j:log4j-core:$log4j2VersionNr"
     // Bridge that routes log4j calls to log4j2
@@ -152,10 +153,10 @@ subprojects {
         testConfig(log4j2Bridge)
 
         testConfig(junitVersion)
-        testConfig("org.easymock:easymock:4.0.1")
-        testConfig("org.powermock:powermock-core:2.0.5")
-        testConfig("org.powermock:powermock-module-junit4:2.0.5")
-        testConfig("org.powermock:powermock-api-easymock:2.0.5")
+        testConfig("org.easymock:easymock:5.1.0")
+        testConfig("org.powermock:powermock-core:2.0.9")
+        testConfig("org.powermock:powermock-module-junit4:2.0.9")
+        testConfig("org.powermock:powermock-api-easymock:2.0.9")
     }
 
     /*
