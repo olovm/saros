@@ -39,11 +39,31 @@ sourceSets {
 }
 
 dependencies {
+    val log4j2VersionNr = "2.20.0"
+    val log4j2Api = "org.apache.logging.log4j:log4j-api:$log4j2VersionNr"
+    val log4j2Core = "org.apache.logging.log4j:log4j-core:$log4j2VersionNr"
+    // Bridge that routes log4j calls to log4j2
+    val log4j2Bridge = "org.apache.logging.log4j:log4j-1.2-api:$log4j2VersionNr"
+    implementation("$log4j2Api")
+    implementation("$log4j2Core")
+    implementation("$log4j2Bridge")
+
+//    implementation("commons-codec:commons-codec:1.3")
+//    implementation("commons-io:commons-io:2.0.1")
+    implementation("org.apache.commons:commons-lang3:3.8.1")
+
+//    implementation("javax.jmdns:jmdns:3.4.1")
+//    implementation("xpp3:xpp3:1.1.4c")
+//    implementation("com.thoughtworks.xstream:xstream:1.4.19")
+//    implementation("org.gnu.inet:libidn:1.15")
+    implementation(rootProject.files("libs/picocontainer-2.11.2-patched_relocated.jar"))
     implementation(project(":saros.core"))
+//    api(project(":saros.core"))
 
     // workaround for "signer information does not match signer information
     // of other classes in the same package" when using older versions like 3.16.300
     implementation("org.eclipse.platform:org.eclipse.jface.text:3.20.100")
+//    api("org.eclipse.platform:org.eclipse.jface.text:3.20.100")
 
     testImplementation(project(path = ":saros.core", configuration = "testing"))
 }

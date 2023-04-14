@@ -16,15 +16,18 @@ configurations {
     // Default configuration
 //    val compile by getting {
     val implementation by getting {
+//    val api by getting {
         extendsFrom(releaseDep)
     }
 //    val testCompile by getting {
     val testImplementation by getting {
+//    val testApi by getting {
         extendsFrom(testConfig)
     }
     val plain by creating {
 //    	extendsFrom(compile)
-        extendsFrom(implementation)
+    	extendsFrom(implementation)
+//        extendsFrom(api)
     }
 }
 
