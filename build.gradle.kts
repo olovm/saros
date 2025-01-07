@@ -152,10 +152,10 @@ subprojects {
         testConfig(log4j2Bridge)
 
         testConfig(junitVersion)
-        testConfig("org.easymock:easymock:4.0.1")
-        testConfig("org.powermock:powermock-core:2.0.5")
-        testConfig("org.powermock:powermock-module-junit4:2.0.5")
-        testConfig("org.powermock:powermock-api-easymock:2.0.5")
+        testConfig("org.easymock:easymock:5.5.0")
+        testConfig("org.powermock:powermock-core:2.0.9")
+        testConfig("org.powermock:powermock-module-junit4:2.0.9")
+        testConfig("org.powermock:powermock-api-easymock:2.0.9")
     }
 
     /*
