@@ -2,7 +2,8 @@
 <feature
       id="saros.feature"
       label="Saros"
-      version="16.0.1">
+      version="17.0.0"
+      provider-name="olovm">
 
    <description>
       Distributed Party Programming for Eclipse.
@@ -370,14 +371,14 @@ Public License instead of this License.
          id="saros.eclipse"
          download-size="0"
          install-size="0"
-         version="16.0.1"
+         version="17.0.0"
          unpack="false"/>
 
    <plugin
          id="saros.core"
          download-size="0"
          install-size="0"
-         version="0.2.0"
+         version="0.3.0"
          unpack="false"/>
 
 </feature>
