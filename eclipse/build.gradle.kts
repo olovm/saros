@@ -48,11 +48,12 @@ dependencies {
 
     testImplementation(project(path = ":saros.core", configuration = "testing"))
    
-    implementation("org.eclipse.platform:org.eclipse.core.resources") {
-        version {
-            strictly("3.17.0")
-        }
-    }
+//    implementation("org.eclipse.platform:org.eclipse.core.resources") {
+//        version {
+//            strictly("3.17.0")
+//            strictly("3.22.0")
+//        }
+//    }
 }
 
 tasks {

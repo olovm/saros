@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.log4j.Logger;
-import org.eclipse.core.internal.utils.FileUtil;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -466,9 +465,18 @@ public class EditorManager implements IEditorManager {
 
     IFile file = ResourceConverter.getDelegate(wrappedFile);
 
-    String lineSeparator = FileUtil.getLineSeparator(file);
+    //    String lineSeparator = FileUtil.getLineSeparator(file);
+    String lineSeparator = getLineSeparator(file);
 
     return LineSeparatorNormalizationUtil.normalize(content, lineSeparator);
+  }
+
+  private String getLineSeparator(IFile file) {
+    //    try {
+    //      return file.getLineSeparator(true);
+    //    } catch (CoreException e) {
+    return System.lineSeparator();
+    //    }
   }
 
   @Override
@@ -624,7 +632,8 @@ public class EditorManager implements IEditorManager {
 
     TextPosition startPosition = EditorAPI.calculatePosition(document, offset);
 
-    String lineSeparator = FileUtil.getLineSeparator(file);
+    //    String lineSeparator = FileUtil.getLineSeparator(file);
+    String lineSeparator = getLineSeparator(file);
 
     String normalizedText = LineSeparatorNormalizationUtil.normalize(text, lineSeparator);
     String normalizedReplacedText =
@@ -735,7 +744,7 @@ public class EditorManager implements IEditorManager {
       String replacedText = textEdit.getReplacedText();
       String text = textEdit.getNewText();
 
-      String lineSeparator = FileUtil.getLineSeparator(file);
+      String lineSeparator = getLineSeparator(file);
 
       String denormalizedReplacedText =
           LineSeparatorNormalizationUtil.revertNormalization(replacedText, lineSeparator);
