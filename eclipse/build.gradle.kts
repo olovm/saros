@@ -40,12 +40,19 @@ sourceSets {
 
 dependencies {
     implementation(project(":saros.core"))
+    implementation(project(":saros.core", configuration = "releaseDep"))
 
     // workaround for "signer information does not match signer information
     // of other classes in the same package" when using older versions like 3.16.300
     implementation("org.eclipse.platform:org.eclipse.jface.text:3.20.100")
 
     testImplementation(project(path = ":saros.core", configuration = "testing"))
+   
+    implementation("org.eclipse.platform:org.eclipse.core.resources") {
+        version {
+            strictly("3.17.0")
+        }
+    }
 }
 
 tasks {
@@ -213,3 +220,12 @@ tasks {
         }
     }
 }
+tasks.withType<JavaExec> {
+	jvmArgs("--add-opens", "java.base/java.nio.charset=ALL-UNNAMED")
+}
+
+tasks.withType<Test> {
+	jvmArgs("--add-opens", "java.base/java.nio.charset=ALL-UNNAMED")
+}
+
+
