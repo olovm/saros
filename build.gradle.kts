@@ -1,6 +1,7 @@
 plugins {
     idea
-    id("com.github.johnrengelman.shadow") version "5.2.0" apply false
+//    id("com.github.johnrengelman.shadow") version "5.2.0" apply false
+    id("com.github.johnrengelman.shadow") version "8.1.1" apply false
 }
 
 /*
@@ -133,8 +134,10 @@ subprojects {
     /*
      * Make common dependency definitions accessible by all sub-projects
      */
-    val junitVersion = "junit:junit:4.12"
+//    		val junitVersion = "junit:junit:4.12"
+    val junitVersion = "junit:junit:4.13.2"
     val log4j2VersionNr = "2.18.0"
+//    val log4j2VersionNr = "2.24.3"
     val log4j2Api = "org.apache.logging.log4j:log4j-api:$log4j2VersionNr"
     val log4j2Core = "org.apache.logging.log4j:log4j-core:$log4j2VersionNr"
     // Bridge that routes log4j calls to log4j2

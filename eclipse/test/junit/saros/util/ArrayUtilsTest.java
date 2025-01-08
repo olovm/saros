@@ -88,7 +88,7 @@ public class ArrayUtilsTest {
     numbers.add(7);
     assertTrue(numbers.contains(7));
 
-    numbers.remove(new Integer(7));
+    numbers.remove(Integer.valueOf(7));
     assertFalse(numbers.contains(7));
 
     int size = numbers.size();

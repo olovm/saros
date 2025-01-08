@@ -15,6 +15,7 @@ import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchListener;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.prefs.BackingStoreException;
@@ -130,7 +131,7 @@ public class Saros extends AbstractUIPlugin {
 
     isLifecycleStarted = true;
 
-    getWorkbench().addWorkbenchListener(workbenchShutdownListener);
+    PlatformUI.getWorkbench().addWorkbenchListener(workbenchShutdownListener);
     isInitialized = true;
   }
 
@@ -141,7 +142,7 @@ public class Saros extends AbstractUIPlugin {
 
     saveGlobalPreferences();
 
-    getWorkbench().removeWorkbenchListener(workbenchShutdownListener);
+    PlatformUI.getWorkbench().removeWorkbenchListener(workbenchShutdownListener);
 
     try {
       stopLifeCycle();

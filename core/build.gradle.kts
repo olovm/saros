@@ -33,12 +33,17 @@ sarosEclipse {
 }
 
 dependencies {
-    releaseDep("commons-codec:commons-codec:1.3")
+	releaseDep("commons-codec:commons-codec:1.3")
+//    releaseDep("commons-codec:commons-codec:1.17.2")
     releaseDep("commons-io:commons-io:2.0.1")
+//    releaseDep("commons-io:commons-io:2.18.0")
     releaseDep("org.apache.commons:commons-lang3:3.8.1")
+//    releaseDep("org.apache.commons:commons-lang3:3.17.0")
 
     releaseDep("javax.jmdns:jmdns:3.4.1")
+//    releaseDep("org.jmdns:jmdns:3.6.0")
     releaseDep("xpp3:xpp3:1.1.4c")
+//    releaseDep("org.ogce:xpp3:1.1.6")
     releaseDep("com.thoughtworks.xstream:xstream:1.4.21")
     releaseDep("org.gnu.inet:libidn:1.15")
 
@@ -54,8 +59,10 @@ dependencies {
     // Workaround until we can publish and use (without a user token) the repackaged jar in GitHub Packages
     releaseDep(rootProject.files("libs/picocontainer-2.11.2-patched_relocated.jar"))
     
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
-	testRuntimeOnly("org.junit.platform:junit-platform-engine:1.10.0")
+//    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+//    testRuntimeOnly("org.junit.platform:junit-platform-engine:1.10.0")
+	testRuntimeOnly("org.junit.platform:junit-platform-engine:1.11.4")
 	
 	
 		
