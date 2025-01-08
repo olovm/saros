@@ -74,7 +74,8 @@ sourceSets {
 tasks {
 
     val testJar by registering(Jar::class) {
-        classifier = "tests"
+        //classifier = "tests"
+        archiveClassifier.set("tests")
         from(sourceSets["test"].output)
     }
 
@@ -85,7 +86,8 @@ tasks {
             from("META-INF/MANIFEST.MF")
         }
         from(sourceSets["main"].output)
-        classifier = "plain"
+        //classifier = "plain"
+         archiveClassifier.set("plain")
     }
 
     artifacts {

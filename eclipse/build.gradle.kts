@@ -77,7 +77,8 @@ tasks {
     }
 
     val testJar by registering(Jar::class) {
-        classifier = "tests"
+        //classifier = "tests"
+        archiveClassifier.set("tests")
         from(sourceSets["test"].output)
     }
 
@@ -211,6 +212,8 @@ tasks {
      * and creates a zip.
      */
     register("dropin", Zip::class) {
+    	group = "build"
+    	description = "Create a dropin ZIP file for Eclipse."
         dependsOn(updateSite)
 
         archiveFileName.set("saros-eclipse-dropin.zip")
