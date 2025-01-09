@@ -129,7 +129,8 @@ subprojects {
      * dependencies and building the update site.
      */
     //projectToConf.extra["eclipseVersion"] = "4.8.0"
-    projectToConf.extra["eclipseVersion"] = "4.16.0"
+//    projectToConf.extra["eclipseVersion"] = "4.16.0"
+    projectToConf.extra["eclipseVersion"] = "4.34.0"
 
     /*
      * Make common dependency definitions accessible by all sub-projects
